@@ -13,10 +13,11 @@ int main()
 		printf("\n");
 	}*/
 	/*printf("name\tage\tgender\thobby\n");
-	printf("kunkun\t2.5\tÅ®\tÀºÇò\n");*/
+	printf("kunkun\t2.5\tå¥³\tç¯®çƒ\n");*/
+	//æ‰¾ä»2åˆ°iè´¨æ•°
 	int i;	
 	int countA = 0;
-	printf("ÇëÊäÈëÒ»¸öÕıÕûÊı");
+	printf("è¯·è¾“å…¥ä¸€ä¸ªæ­£æ•´æ•°");
 	scanf("%d",&i);
 	for (int a=2;a<=i;a++)
 	{
@@ -37,7 +38,7 @@ int main()
 			}
 	}
 	
-	printf("´Ó2µ½%dµÄÖÊÊıÓĞ%d¸ö\n",i,countA);
+	printf("ä»2åˆ°%dçš„è´¨æ•°æœ‰%dä¸ª\n",i,countA);
 
 	return 0;
 }
