@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+
+int main()
+{
+	int arr[10] = {0};
+	int len = sizeof(arr) / sizeof(int);
+	srand(time(NULL));
+	for(int i=0;i<len;i++)//生成随机数
+	{ 
+		int a = rand() % 100 + 1;
+		arr[i] = a;
+		if (arr[i]==arr[i])
+		{
+			printf("%d\n",arr[i]);
+			continue;  		
+		}
+	}
+		int sum = 0;
+		
+	for (int i = 0; i < len; i++)
+	{		
+		sum = sum+arr[i];//求和
+		
+	}
+		double aver = (double)sum / len;//计算平均数
+		int count = 0;
+	for (int i = 0; i < len; i++)
+	{
+		
+		if (arr[i]<aver)//判断那些数小于平均数
+		{
+			count++;
+		}
+
+	}
+		printf("%d\n",count);
+		printf("%d\n",sum);	
+		printf("%.2lf\n",aver);
+	
+	return 0;
+}
