@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+int disc(int arr[], int len, int bedisc);
+int main()
+{
+	int arr[] = {12,13,15,16,17,18,19,20};
+	int len = sizeof(arr) / sizeof(int);
+	int bedisc;
+	printf("yor number:");
+	scanf("%d",&bedisc);
+	int retmid=disc(arr,len,bedisc);
+	printf("%d\n",retmid);
+	return 0;
+}
+int disc(int arr[],int len,int bedisc)
+{
+	int min = 0;
+	int max = len-1;
+	int mid = (max + min) / 2;
+	while (min<=max)
+	{
+		if (arr[mid]<bedisc)
+		{
+			min = mid + 1;
+		}
+		else if (arr[mid]>bedisc)
+		{
+			max = mid - 1;
+		}
+		else
+		{
+			return mid;
+		}
+	return -1;
+	}
+}
