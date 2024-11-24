@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int in, rt;  // 屏幕录入
+    char re;     // 判断继续
+    int count = 0;
+
+    srand(time(NULL));  // 随机数种子
+
+    do {
+        count = 0;  // 重新计数
+        int num1 = rand() % 100 + 1;  // 生成（1--100）之间的随机数
+
+        //printf("A new game has started!\n");
+
+        do {
+            printf("请输入你要猜的数字(1-100): ");
+            rt = scanf_s("%d", &in);
+
+            
+            while (rt != 1) {
+                printf("请输入你要猜的数字(1-100): ");
+                while (getchar() != '\n'); 
+                rt = scanf_s("%d", &in);
+            }
+
+            if (in > num1 && in <= 100) 
+            {
+                printf("遗憾，太大了\n");
+                count++;
+            }
+            else if (in < num1 && in >= 1) 
+            {
+                printf("遗憾太小了\n");
+                count++;
+            }
+            else if (in == num1) 
+            {
+                count++;
+                printf("预测%d次，你猜对了\n", count);
+                break;
+            }
+            else 
+            {
+                printf("你输入的数超出(1-100)这个范围，请重新输入\n");
+            }
+
+            if (count == 10 && in != num1) {
+                printf("游戏失败\n");
+                break;
+            }
+        } while (in != num1);
+
+        printf("是否愿意再来一局? 输入Y/y表示再来一局: ");
+        while (getchar() != '\n');  
+        re = getchar();
+
+    } while (re == 'Y' || re == 'y');
+
+    return 0;
+}
