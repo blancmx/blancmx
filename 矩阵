@@ -1,0 +1,58 @@
+#include<stdio.h>
+
+int function(int arr[][10], int n)
+{
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i][n - i - 1];
+	}
+
+	return sum;
+}
+
+int function1(int arr[][10], int n)
+{
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i][i];
+	}
+
+	return sum;
+}
+
+int main()
+{
+	int arr[10][10];
+	int n;
+	printf("input your wants:");
+	scanf("%d",&n);
+
+	for (int i=0;i<n;i++)
+	{
+		for (int j=0;j<n;j++)
+		{
+			scanf("%d", &arr[i][j]);
+
+		}
+	}
+	
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			printf("%d\t", arr[i][j]);
+
+		//}
+		printf("\n");
+	}
+
+	int result = function(arr, n);
+	int result1 = function1(arr, n);
+
+	printf("主对角线%d\n", result);
+	printf("副对角线%d\n", result1);
+
+	return 0;
+}
