@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() 
+{
+    // Write your code here
+    for (int i = 100; i < 1000; i++)
+    {
+        int ge = i % 10;
+        int shi = i / 10 % 10;
+       int bai = i / 10 / 10 % 10;
+        int i1 = ge * ge * ge;
+        int i2 = shi * shi * shi;
+        int i3 = bai * bai * bai;
+        int i_ = i1 + i2 + i3;
+        if (i == i_)
+        {
+           printf("%d\n", i);
+        }
+    }
+     return 0;
+}
