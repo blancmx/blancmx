@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+int main()
+{
+	int a, b;
+	printf("please input two numbers:");
+	scanf("%d %d",&a,&b);
+	int li = a > b ? a : b;
+	int max = 0;
+	for (int i = 2; i < li; i++)
+	{
+		if (a%i==0&&b%i==0)
+		{
+			max = i;
+				
+		}
+		
+	}
+	if (max != 0)
+	{
+		printf("MAX=%d\n", max);
+	}
+	else
+	{
+		printf("NO i");
+	}
+			
+	return 0;
+}
