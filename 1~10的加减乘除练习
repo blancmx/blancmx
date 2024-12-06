@@ -1,0 +1,93 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+
+float st(char arr, float a, float b);
+void good(int j);
+void bad(int k);
+int main()
+{
+	float a, b, c;
+	int count = 0;
+	float right = 0;
+	srand(time(NULL));
+	char arr[] = { '+','-','*','/' };
+	int i,j,k;
+	do {
+		count = 0;
+		right = 0;
+		for (int y = 0; y < 10;y++) {
+			a = rand() % 10 + 1;
+			b = rand() % 10 + 1;
+			i = rand() % 4;
+			j = rand() % 4+1;
+			k = rand() % 4+1;
+			printf("%.1f %c %.1f = \n", a, arr[i], b);
+			printf("Please input the right resuslt:");
+			scanf("%f", &c);
+			if (c == st(arr[i], a, b))
+			{
+				right++;
+				good(j);
+			}
+			else
+			{
+				count++;
+				bad(k);
+			}
+		}
+		printf("You don't answer right over 8\nRetest!\n\n");
+	} while (right < 8);
+
+
+	printf("Your total grade:%.0f\n", 10 * right);
+	printf("Your accuracy:%.0f %%\n", right * 10);
+	return 0;
+}
+float st(char arr, float a, float b) {
+	if (arr == '+') {
+		return a + b;
+	}
+	else if (arr == '-') {
+		return a - b;
+	}
+	else if (arr == '*') {
+		return a * b;
+	}
+	else {
+		return a / b;
+	}
+
+}
+void good(int j) {
+	switch (j) {
+	case 1:
+		printf("Very good!\n");
+		break;
+	case 2:
+		printf("Excellent!\n");
+		break;
+	case 3:
+		printf("Nice work!\n");
+		break;
+	case 4:
+		printf("Keep up the good work!\n");
+		break;
+	}
+}
+void bad(int k) {
+	switch (k) {
+	case 1:
+		printf("No.Please try again.\n");
+		break;
+	case 2:
+		printf("Wrong.Try once more.\n");
+		break;
+	case 3:
+		printf("Don't give up!\n");
+		break;
+	case 4:
+		printf("Not correct.Keep trying.\n");
+		break;
+	}
+}
